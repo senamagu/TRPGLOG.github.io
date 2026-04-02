@@ -59,6 +59,7 @@
       object-fit: cover;
     }
     .info {
+      height: 88px;
       margin: 20px auto 0;
       width: 100%;
       background: #6EB8DE;
@@ -71,6 +72,7 @@
       transform: translateY(6px);
     }
     .title {
+      width: 100%;
       font-size: 18px;
       font-weight: bold;
       color: #4A72B7;
@@ -80,6 +82,7 @@
     }
     .card:hover .title,
     .card:hover .explorer-row {
+      min-width: 0;
       color: #B2F5E1;
     }
     .line {
@@ -108,6 +111,8 @@
       flex-shrink: 0;
     }
     .name {
+      flex: 1;
+      min-width: 0;
       overflow: hidden;
       text-overflow: ellipsis;
     }
