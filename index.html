@@ -129,39 +129,36 @@
   <div class="header">ココフォリアログ置き場</div>
   <div class="grid" id="grid"></div>
 
-  <script>
-    const logs = [
-      { title: "シナリオ名", explorer: "名前 太郎", image: "", link: "#" },
-      { title: "長いシナリオタイトルのテスト表示サンプル", explorer: "茶和田 リサ", image: "", link: "#" },
-      { title: "シナリオ名", explorer: "名前 太郎", image: "", link: "#" },
-      { title: "シナリオ名", explorer: "名前 太郎", image: "", link: "#" }
-    ];
+<script>
+  const grid = document.getElementById('grid');
 
-    const grid = document.getElementById('grid');
+  fetch('./logs.json')
+    .then(res => res.json())
+    .then(logs => {
+      logs.forEach(log => {
+        const card = document.createElement('a');
+        card.className = 'card';
+        card.href = log.link;
+        card.target = '_blank';
 
-    logs.forEach(log => {
-      const card = document.createElement('a');
-      card.className = 'card';
-      card.href = log.link;
-      card.target = '_blank';
-
-      card.innerHTML = `
-        <div class="image-box">
-          ${log.image ? `<img src="${log.image}" alt="${log.title}">` : 'NoImage'}
-        </div>
-        <div class="info">
-          <div class="title" title="${log.title}">${log.title}</div>
-          <div class="line"></div>
-          <div class="explorer-row">
-            <span>探索者</span>
-            <span class="divider"></span>
-            <span class="name" title="${log.explorer}">${log.explorer}</span>
+        card.innerHTML = `
+          <div class="image-box">
+            ${log.image ? `<img src="${log.image}" alt="${log.title}">` : 'NoImage'}
           </div>
-        </div>
-      `;
+          <div class="info">
+            <div class="title" title="${log.title}">${log.title}</div>
+            <div class="line"></div>
+            <div class="explorer-row">
+              <span>探索者</span>
+              <span class="divider"></span>
+              <span class="name" title="${log.explorer}">${log.explorer}</span>
+            </div>
+          </div>
+        `;
 
-      grid.appendChild(card);
+        grid.appendChild(card);
+      });
     });
-  </script>
+</script>
 </body>
 </html>
