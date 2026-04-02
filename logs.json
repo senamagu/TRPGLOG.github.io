@@ -2,13 +2,7 @@
   {
     "title": "沼男は誰だ？",
     "explorer": "茶和田 リサ",
-    "image": "",
-    "link": "#"
-  },
-  {
-    "title": "長いタイトル確認用のサンプルシナリオです",
-    "explorer": "名前 太郎",
-    "image": "",
-    "link": "#"
+    "image": "./Scenario/Room 208/image/img_107.png",
+    "link": "./Scenario/Room 208/log_export.html"
   }
 ]
